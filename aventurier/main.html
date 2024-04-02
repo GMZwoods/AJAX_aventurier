@@ -13,7 +13,22 @@
 <body>
 <main class="container">
     <h1>Nos aventuriers</h1>
-    <button class="btn btn-success" onclick="CreerUnObjet()">Creer un Aventurier</button>
+    <form action="">
+        <div>
+            <label for="Nom">Votre nom:</label>
+            <input id="Nom" type="text" name="NomUser" placeholder="Nom">
+        </div>
+        <div>
+            <label for="couleur">Votre Couleur:</label>
+            <input id="couleur" type="color" name="CouleurUser">
+        </div>
+        <div>
+            <label for="avatar">Votre avatar</label>
+            <input id="avatar" type="url" name="AvatarUser" placeholder="Url:">
+        </div>
+        <button class="btn btn-success" onclick="CreerUnObjet()">Creer votre Aventurier</button>
+    </form>
+
     <ul id="aventuriers" class="row"></ul>
     <p class="alert alert-danger d-none" role="alert"></p>
 </main>

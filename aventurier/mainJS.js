@@ -56,14 +56,14 @@ function CreerUnObjet()
     // to do recuperer les données du formulaire pour creer un aventurier
     const aventurier =
     {
-        nom: "FX",
-        couleur: "#6c6c67",
-        avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=1886&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        nom : $("#Nom").text(),
+        couleur: $("#couleur").val(),
+        id: Math.floor(Math.random() * 10000) +1,
+        avatar: $("#avatar").attr('src')
     }
 
-
     const newTask = {
-        content: 'Check out mockapi.io',
+        content: aventurier,
         completed: false,
     };
 
@@ -142,6 +142,20 @@ $.getJSON('aventurier.json').done(function (aventuriers){
 */ //<<-------------------------
 
 /*         FAIT JAVASCRIPT (SANS BIBLIOTHÈQUE)                          */
+
+
+async function afficherTout()
+{
+    const reponse = await fetch('https://660c03fe3a0766e85dbd2a2e.mockapi.io/Aventurier/');
+    const aventurier = await reponse.json();
+    return aventurier;
+}
+
+afficherTout().then(function (aventurier))
+{
+    aventurier
+}
+
 fetch('https://660c03fe3a0766e85dbd2a2e.mockapi.io/Aventurier')
     .then(reponse=>{
         //Un problème s'est produit
