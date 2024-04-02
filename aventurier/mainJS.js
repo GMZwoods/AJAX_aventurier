@@ -56,7 +56,7 @@ function CreerUnObjet()
     // to do recuperer les données du formulaire pour creer un aventurier
     const aventurier =
     {
-        nom : $("#Nom").text(),
+        nom : $("#nom").val(),
         couleur: $("#couleur").val(),
         id: Math.floor(Math.random() * 10000) +1,
         avatar: $("#avatar").attr('src')
@@ -149,11 +149,6 @@ async function afficherTout()
     const reponse = await fetch('https://660c03fe3a0766e85dbd2a2e.mockapi.io/Aventurier/');
     const aventurier = await reponse.json();
     return aventurier;
-}
-
-afficherTout().then(function (aventurier))
-{
-    aventurier
 }
 
 fetch('https://660c03fe3a0766e85dbd2a2e.mockapi.io/Aventurier')
